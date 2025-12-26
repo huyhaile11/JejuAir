@@ -3,179 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeju Air - Cẩm Nang Nghiệp Vụ Tổng Hợp 2025</title>
+    <title>Jeju Air - Sổ Tay Nghiệp Vụ Tổng Hợp</title>
     <style>
-        :root { --orange: #ff5d00; --blue: #004b8d; --bg: #f4f7f6; --text: #2d3436; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; }
+        :root { --orange: #ff5d00; --blue: #004b8d; --bg: #f2f4f7; --text: #333; --dark-gray: #2d3436; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; margin: 0; background: var(--bg); color: var(--text); }
+        
+        /* Header & Search */
         header { background: var(--orange); color: white; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-        .search-area { background: white; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        #searchBar { width: 100%; max-width: 900px; display: block; margin: 0 auto; padding: 15px 25px; border: 2px solid var(--orange); border-radius: 50px; font-size: 18px; outline: none; }
-        .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 20px; padding: 20px; max-width: 1400px; margin: auto; }
-        .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-top: 5px solid var(--orange); transition: transform 0.2s; }
-        .card:hover { transform: translateY(-5px); }
-        .card-header { background: #fff5f0; padding: 12px 18px; border-bottom: 1px solid #ffe0d0; font-weight: bold; color: var(--orange); display: flex; align-items: center; font-size: 1.1rem; }
-        .card-header span { font-size: 24px; margin-right: 10px; }
-        .card-body { padding: 18px; font-size: 14.5px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        td, th { border: 1px solid #eee; padding: 10px; text-align: left; }
-        th { background: #f9f9f9; color: var(--blue); font-weight: 600; }
-        .code-block { background: #2d3436; color: #fab1a0; padding: 10px; border-radius: 6px; font-family: 'Courier New', monospace; display: block; margin: 10px 0; font-size: 13px; border-left: 4px solid #00cec9; }
+        .search-area { background: white; padding: 12px; position: sticky; top: 75px; z-index: 999; border-bottom: 1px solid #ddd; }
+        #searchBar { width: 100%; box-sizing: border-box; padding: 12px 20px; border: 2px solid var(--orange); border-radius: 25px; font-size: 16px; outline: none; }
+        
+        /* Layout */
+        .container { padding: 15px; max-width: 1000px; margin: auto; }
+        .card { background: white; border-radius: 12px; margin-bottom: 20px; overflow: hidden; box-shadow: 0 3px 12px rgba(0,0,0,0.1); border-top: 6px solid var(--orange); }
+        .card-header { background: #fff5f0; padding: 12px 15px; font-weight: bold; color: var(--orange); border-bottom: 1px solid #ffe0d0; font-size: 1.1rem; }
+        .card-body { padding: 15px; font-size: 14.5px; line-height: 1.6; }
+
+        /* Tables & Elements */
+        table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 13.5px; }
+        td, th { border: 1px solid #eee; padding: 10px; text-align: left; vertical-align: top; }
+        th { background: #f9f9f9; color: var(--blue); }
+
+        .cmt-box { background: var(--dark-gray); color: #fab1a0; padding: 12px; border-radius: 6px; font-family: 'Courier New', monospace; display: block; margin: 8px 0; font-size: 13px; border-left: 4px solid #00cec9; word-break: break-all; }
+        .ssr-tag { background: #e1f5fe; color: #01579b; border: 1px solid #b3e5fc; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 12px; display: inline-block; margin-bottom: 5px; }
         .highlight { color: #d63031; font-weight: bold; }
-        .note-box { background: #ffffcc; padding: 12px; border-left: 4px solid #ffeb3b; margin-top: 10px; font-style: italic; border-radius: 4px; }
-        footer { text-align: center; padding: 30px; color: #888; border-top: 1px solid #ddd; margin-top: 20px; }
+        .procedure-step { background: #fff9db; border-left: 4px solid #f1c40f; padding: 10px; margin-top: 10px; border-radius: 4px; }
+        
+        footer { text-align: center; padding: 20px; color: #888; font-size: 12px; }
+        .section-title { color: var(--blue); border-left: 4px solid var(--blue); padding-left: 10px; margin: 15px 0 10px 0; font-weight: bold; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1 style="margin:0">JEJU AIR QUICK REFERENCE</h1>
-    <p style="margin:5px 0 0 0">Hệ thống tra cứu Chính sách & Nghiệp vụ Quầy (Update 2025)</p>
+    <h1 style="margin:0; font-size: 1.4rem;">JEJU AIR MANUAL</h1>
+    <p style="margin:5px 0 0 0; font-size: 0.8rem;">CHÍNH SÁCH & NGHIỆP VỤ TỔNG HỢP 2025</p>
 </header>
 
 <div class="search-area">
-    <input type="text" id="searchBar" placeholder="Tìm nhanh: UM, WCH, Fly 15kg, mang thai, mark comment..." onkeyup="filterCards()">
+    <input type="text" id="searchBar" placeholder="Tìm nhanh: UM, WCH, Mark cmt, Golf, Fly..." onkeyup="filterCards()">
 </div>
 
 <div class="container">
+
     <div class="card">
-        <div class="card-header"><span>🎫</span> Tiêu chuẩn Hạng Vé & HLXT</div>
+        <div class="card-header">🎫 HẠNG VÉ & TIÊU CHUẨN</div>
         <div class="card-body">
             <table>
                 <tr><th>Hạng</th><th>Ký gửi</th><th>Xách tay</th></tr>
                 <tr><td><strong>Fly</strong></td><td>0kg</td><td>10kg</td></tr>
                 <tr><td><strong>Fly Bag</strong></td><td>15kg</td><td>10kg</td></tr>
-                <tr><td><strong>Bizlite</strong></td><td>30kg + 🍱 Suất ăn</td><td>10kg</td></tr>
+                <tr><td><strong>Bizlite</strong></td><td>30kg + 🍱</td><td>10kg</td></tr>
             </table>
-            <div class="note-box">
-                <strong>HLXT:</strong> 1 kiện (40x20x55) + 1 túi cá nhân. Tổng cả 2 kiện <span class="highlight">không quá 10kg</span>.
+            <div class="section-title">Tiêu chuẩn Hành lý Xách tay (HLXT)</div>
+            <p>• 1 kiện (40x20x55) + 1 túi cá nhân. Tổng cả 2 <span class="highlight">≤ 10kg</span>.</p>
+            
+            <div class="section-title">Tiêu chuẩn Hành lý Ký gửi (HLKG)</div>
+            <p>• Hệ cân: Tổng 3 chiều ≤ 158cm (Guam/Saipan ≤ 273cm).</p>
+            <p>• Tối đa 32kg/kiện. <span class="highlight">BBST & WCH gửi miễn phí.</span></p>
+            <p>• <strong>Hành lý Golf:</strong> Mark SSR <span class="ssr-tag">GOLF</span> (Tính như HLKG bình thường).</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">💰 QUY TRÌNH TRẢ TIỀN DỊCH VỤ</div>
+        <div class="card-body">
+            <div class="procedure-step">
+                <strong>LƯU Ý QUAN TRỌNG:</strong> Hoàn thành tất cả các bước CKI và để hệ thống <span class="highlight">NỔI PAYMENT</span> trước khi chỉ ra quầy REP trả cước!
             </div>
+            <p><strong>Các bước hướng dẫn khách qua quầy REP:</strong></p>
+            <ol>
+                <li>Viết lên mặt sau của tờ bán ghế hoặc Exit Info.</li>
+                <li>Nội dung ghi:
+                    <br>• <strong>PNR</strong>
+                    <br>• <strong>Tên Pax</strong>
+                    <br>• <strong>Loại dịch vụ:</strong> Mua ghế (ghi số ghế), Mua cân (ghi số kg).
+                </li>
+            </ol>
+            <p>→ Hướng dẫn khách sang quầy Đại diện để thanh toán.</p>
         </div>
     </div>
 
     <div class="card">
-        <div class="card-header"><span>🧳</span> Hành lý ký gửi (HLKG)</div>
+        <div class="card-header">💺 CHỖ NGỒI & CODE WAIVE</div>
         <div class="card-body">
+            <div class="section-title">Ghế bán & Hạn chế</div>
+            <p>• <strong>Hàng ghế bán:</strong> 1ABC, 2DEF, 15, 16.</p>
+            <p>• <strong>Hàng 16:</strong> <span class="cmt-box">EXIT SEAT INFORM PAX OK</span></p>
+            <p>• <strong>Hàng 15:</strong> <span class="cmt-box">EXIT AND NO RECLINE SEAT INFOM PAX OK</span></p>
+            <p>• <strong>Hàng 14/32:</strong> (Tùy tàu) <span class="cmt-box">NO RECLINE SEAT INFORM PAX OK</span></p>
+            <p>• <strong>Đổi ghế mua sẵn:</strong> <span class="cmt-box">PAX WANT CHANGE FROM SN... TO SN</span></p>
+
+            <div class="section-title">Quy định Code Waive (Báo Đại diện trước)</div>
+            <table>
+                <tr><th>Code</th><th>Trường hợp áp dụng</th></tr>
+                <tr><td><strong>POOL</strong></td><td>Waive cân với những pax pooling hành lý.</td></tr>
+                <tr><td><strong>SEAT</strong></td><td>Waive ghế mất phí (Hàng đầu, thoát hiểm) do chuyến đông pax.</td></tr>
+                <tr><td><strong>STCH</strong></td><td>Pax đã mua chỗ trước và muốn đổi ghế khác tại quầy.</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">💸 QUÁ CƯỚC & TRANSIT</div>
+        <div class="card-body">
+            <p>• <strong>HAN - ICN:</strong> $18 / 1kg.</p>
+            <p>• <strong>Riêng hạng FLY (0kg):</strong> 1 kiện 15kg = <span class="highlight">$90</span>. Từ cân thứ 16: $18/1kg.</p>
+            <p>• <strong>Nối chuyến 1 PNR:</strong> Thu theo hệ thống.</p>
+            <p>• <strong>Nối chuyến nhiều PNR:</strong> Thu theo từng chặng.</p>
+            <p>• <strong>Khách Transit tại Hàn (không đủ đk nhập cảnh):</strong> <span class="cmt-box">TRANSIT WITHOUT VISA INFO PAX OK</span></p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">🤰 MANG THAI & TRẺ EM</div>
+        <div class="card-body">
+            <div class="section-title">Phụ nữ mang thai (PREG)</div>
             <ul>
-                <li><strong>Hệ cân:</strong> Tổng 3 chiều ≤ 158cm (Guam/Saipan ≤ 273cm).</li>
-                <li><strong>Trọng lượng:</strong> Tối đa 32kg/kiện.</li>
-                <li><strong>Miễn phí:</strong> Xe nôi (BBST) và Xe lăn (WCH).</li>
-                <li><strong>Kiện Golf:</strong> Tính là hành lý bình thường.</li>
+                <li><strong>< 32 tuần:</strong> Phục vụ bình thường.</li>
+                <li><strong>32 - < 37 tuần:</strong> 3 bản GKSK (7 ngày) + ký INDEM.</li>
+                <li><strong>≥ 37 tuần (Đơn) / ≥ 33 tuần (Đa):</strong> <span class="highlight">TỪ CHỐI.</span></li>
             </ul>
+            <span class="cmt-box">PAX PREGNANT .. WEEKS MED CERT AND INDEM SIGN OK</span>
+
+            <div class="section-title">Trẻ em & Em bé</div>
+            <p>• <strong>INF (< 2 tuổi):</strong> 1 INF/dãy. <span class="highlight">Bizlite:</span> 2 INF/dãy (AC hoặc DF).</p>
+            <p>• <strong>UM (5-14 tuổi):</strong> <span class="cmt-box">PLS PREPARE UM STAFF AT ICN APO , CTC NBR ...</span></p>
+            <p>• <strong>Chia sẻ hộ chiếu:</strong> <span class="cmt-box">SHARE PP W SN...</span></p>
         </div>
     </div>
 
     <div class="card">
-        <div class="card-header"><span>💰</span> Hành lý Quá cước & Nối chuyến</div>
+        <div class="card-header">♿ HỖ TRỢ (WCH, DEAF, BLND)</div>
         <div class="card-body">
-            <ul>
-                <li><strong>HAN - ICN:</strong> $18 / 1kg.</li>
-                <li><strong>Hạng Fly:</strong> 1 kiện 15kg = <span class="highlight">$90</span>. Từ cân thứ 16 trở đi: $18/1kg.</li>
-                <li><strong>Nối chuyến 1 PNR:</strong> Thu theo hệ thống.</li>
-                <li><strong>Nối chuyến nhiều PNR:</strong> Thu theo từng chặng.</li>
-            </ul>
-            <div class="code-block">CMT Nối chuyến: TRANSIT WITHOUT VISA INFO PAX OK</div>
+            <div class="section-title">Xe lăn (WCH)</div>
+            <p>• <strong>WCH R/S:</strong> Phải có người đi cùng. Nếu không tự di chuyển được → Báo Đại Diện quyết định.</p>
+            <span class="ssr-tag">WCHR/WCHS/WCHC</span> + <span class="ssr-tag">MAAS</span> (nếu cần hỗ trợ tại ICN).
+            <span class="cmt-box">PAX NEED (NO NEED) WCH AND NEED (NO NEED) MAAS AT ICN AIRPORT</span>
+            <p><i>*Nếu đi theo đoàn: Bổ sung số ghế pax vào CMT.</i></p>
+
+            <div class="section-title">Khiếm thính (DEAF) & Khiếm thị (BLND)</div>
+            <p>• <strong>DEAF:</strong> Ghế lối đi phía trên (Cấm Exit). <br><span class="cmt-box">PAX DEAF x NO NEED MAAS AT ICN APO</span></p>
+            <p>• <strong>BLND:</strong> Đi cùng người khỏe mạnh, xếp 1 kèm 1 ngồi cạnh nhau.<br><span class="cmt-box">PAX BLND x TRAVEL WITH PAX SN ...</span></p>
+            
+            <p class="highlight">❌ TỪ CHỐI: STCR (Cáng), Pax dùng bình OXY.</p>
         </div>
     </div>
 
     <div class="card">
-        <div class="card-header"><span>🎻</span> Nhạc cụ & Đồ thể thao</div>
+        <div class="card-header">🎻 NHẠC CỤ & HL HƯ HẠI</div>
         <div class="card-body">
-            <strong>Nhạc cụ:</strong> 3 chiều ≤ 292cm + ký miễn trừ.
-            <ul>
-                <li>< 115cm: Xách tay.</li>
-                <li>115cm - 195cm (Trọng lượng < 75kg): <span class="highlight">Phải mua thêm ghế</span>.</li>
-            </ul>
-            <hr>
-            <strong>Đồ thể thao (trừ Golf):</strong> $20 tại quầy ($15 online trước 24h).
+            <div class="section-title">Nhạc cụ</div>
+            <p>• Phải ký miễn trừ. Max 292cm.</p>
+            <p>• <strong>< 115cm:</strong> Xách tay.</p>
+            <p>• <strong>115cm - 195cm (< 75kg):</strong> Mua thêm ghế.</p>
+
+            <div class="section-title">Hành lý rách vỡ / hư hại trước CKI</div>
+            <ol>
+                <li>Dán sticker <strong>"DAMAGE"</strong> gần khu vực rách vỡ.</li>
+                <li>Khách ký xác nhận trên thẻ hành lý.</li>
+                <li>Add service <strong>"PRE-DAMAGED BAGGAGE (DMG)"</strong>.</li>
+                <li>Mục <strong>NOTES</strong>: Ghi rõ nội dung kiện hành lý bị rách vỡ ở phần nào.</li>
+            </ol>
         </div>
     </div>
 
     <div class="card">
-        <div class="card-header"><span>👨‍👩‍👧‍👦</span> Đối tượng Khách (INF/CHD/UM)</div>
-        <div class="card-body">
-            <strong>INF (14 ngày < 2 tuổi):</strong> 
-            <ul>
-                <li>Xếp duy nhất 1 INF/dãy ghế (ABC hoặc DEF).</li>
-                <li>Bizlite: Tối đa 2 INF/dãy (ghế AC hoặc DF).</li>
-            </ul>
-            <hr>
-            <strong>CHD (2-12 tuổi):</strong> Đi cùng người lớn ≥ 16 tuổi.
-            <hr>
-            <strong>UM (5-14 tuổi):</strong> Chỉ từ Việt Nam. Cần form UM và MTTN ký bởi người giám hộ ≥ 18 tuổi.
-            <div class="code-block">CMT: PLS PREPARE UM STAFF AT ICN APO, CTC NBR...</div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-header"><span>🤰</span> Phụ nữ mang thai (PREG)</div>
-        <div class="card-body">
-            <ul>
-                <li><strong>Dưới 32 tuần:</strong> Phục vụ bình thường.</li>
-                <li><strong>32 - dưới 37 tuần (Dưới 33 tuần với đa thai):</strong> Cần giấy khám thai (trong 7 ngày) ghi rõ sức khỏe bay và ngày dự sinh.</li>
-                <li><strong>Từ 37 tuần (33 tuần với đa thai):</strong> <span class="highlight">Từ chối vận chuyển</span>.</li>
-            </ul>
-            <div class="code-block">CMT: PAX PREGNANT .. WEEKS MED CERT AND INDEM SIGN OK</div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-header"><span>♿</span> Hỗ trợ (WCH/DEAF/BLND)</div>
-        <div class="card-body">
-            <strong>WCH R/S:</strong> Phải có người đi cùng. Báo Đại diện nếu không tự di chuyển được.
-            <div class="code-block">SSR: WCHR/WCHS/WCHC + MAAS (nếu cần hỗ trợ tại ICN)</div>
-            <hr>
-            <strong>DEAF:</strong> Ngồi ghế lối đi phía trên (Cấm Exit). 
-            <strong>BLND:</strong> Đi cùng người khỏe mạnh, xếp ngồi cạnh nhau.
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-header"><span>🏬</span> Dịch vụ mua tại quầy</div>
+        <div class="card-header">🌟 MEMBERSHIP & DOORSIDE</div>
         <div class="card-body">
             <table>
-                <tr><td>Mua ghế</td><td>$47 (1ABC, 2DEF, 15, 16)</td></tr>
-                <tr><td>Extra Seat</td><td>$50 / ghế (Max 2 ghế)</td></tr>
-                <tr><td>HL Ưu tiên (DS)</td><td>$5</td></tr>
-                <tr><td>PETC ($100)</td><td>< 9kg cả lồng, max 6 pet/tàu. Xếp hàng 32</td></tr>
+                <tr><th>Hạng Thẻ</th><th>Ưu đãi</th></tr>
+                <tr><td><strong>VIP</strong></td><td>+20kg, Doorside, +1 người, Free ghế</td></tr>
+                <tr><td><strong>GOLD</strong></td><td>+10kg, Doorside, +1 người</td></tr>
+                <tr><td><strong>Silver+</strong></td><td>+5kg HLKG</td></tr>
             </table>
+            <p>• <strong>Doorside (DS):</strong> VIP, GOLD, Golf Memb, Pet Memb, Golfzone Priority Coupon.</p>
         </div>
     </div>
 
-    <div class="card">
-        <div class="card-header"><span>🌟</span> Thẻ Thành viên & Membership</div>
-        <div class="card-body">
-            <strong>VIP:</strong> +20kg HLKG, Doorside, +1 khách đi cùng, Free ghế.
-            <br><strong>GOLD:</strong> +10kg HLKG, Doorside, +1 khách đi cùng.
-            <br><strong>Silver+:</strong> +5kg HLKG.
-            <hr>
-            <strong>Golf Memb:</strong> 25kg HLKG, Doorside, Max 292cm.
-            <br><strong>Pet Memb:</strong> +5kg HLKG, Doorside.
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-header"><span>💺</span> Quy định Chỗ ngồi</div>
-        <div class="card-body">
-            <ul>
-                <li><strong>Ghế bán:</strong> 1ABC, 2DEF, 15, 16.</li>
-                <li><strong>Không ngả:</strong> Hàng 14, 15, 32.</li>
-                <li><strong>Thoát hiểm (15, 16):</strong> ≥ 15 tuổi, sức khỏe tốt, hiểu Anh/Hàn.</li>
-            </ul>
-        </div>
-    </div>
 </div>
 
 <footer>
-    <p>&copy; 2025 Jeju Air Vietnam Operation Team - Công cụ tra cứu tổng hợp</p>
+    <p>&copy; 2025 Jeju Air Vietnam Operation Team<br>Layout Optimized for Mobile</p>
 </footer>
 
 <script>
     function filterCards() {
         let input = document.getElementById('searchBar').value.toLowerCase();
         let cards = document.getElementsByClassName('card');
+        
         for (let i = 0; i < cards.length; i++) {
-            let content = cards[i].innerText.toLowerCase();
-            cards[i].style.display = content.includes(input) ? "" : "none";
+            let text = cards[i].innerText.toLowerCase();
+            cards[i].style.display = text.includes(input) ? "" : "none";
         }
     }
 </script>
