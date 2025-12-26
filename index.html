@@ -31,6 +31,16 @@
         .highlight-card { border-top: 5px solid var(--blue); }
         .procedure { background: #fffde7; border: 1px dashed #fbc02d; padding: 10px; margin-top: 10px; border-radius: 5px; font-size: 13.5px; }
         
+        /* App Styles mới bổ sung */
+        .interline-app { background: #f8f9fa; border: 1px solid #ced4da; border-radius: 8px; padding: 15px; margin-top: 15px; border-left: 5px solid var(--orange); }
+        .app-row { margin-bottom: 10px; }
+        .app-row label { display: block; font-weight: bold; margin-bottom: 5px; font-size: 13px; }
+        .app-row select, .app-row input { width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc; box-sizing: border-box; }
+        .bag-list { background: white; padding: 10px; border-radius: 5px; border: 1px solid #ddd; margin-bottom: 10px; }
+        .bag-item { display: flex; align-items: center; gap: 10px; margin-bottom: 5px; }
+        .btn-calc { background: var(--blue); color: white; border: none; padding: 10px; border-radius: 4px; cursor: pointer; width: 100%; font-weight: bold; }
+        #calcResult { margin-top: 10px; padding: 10px; background: #e8f5e9; border-radius: 4px; display: none; }
+
         @media (max-width: 480px) { .container { grid-template-columns: 1fr; } }
     </style>
 </head>
@@ -131,7 +141,7 @@
             <p><strong>• DEPO:</strong> Báo thông tin cho tổ bay, bàn giao giấy tờ cho tổ bay giữ. Xếp ngồi hàng cuối cùng.</p>
             <p><strong>• STCR, PAX DÙNG BÌNH OXY:</strong> <span class="red-bold">TỪ CHỐI VẬN CHUYỂN</span>.</p>
             <hr>
-            <strong>• PETC:</strong> Max 6 pet/tàu. Tổng trọng lượng cả lồng ≤ 9kg.Tổng 3 chiều ≤ 100cm <span class="red-bold">Ngồi cửa sổ hàng 32</span>.
+            <strong>• PETC:</strong> Max 6 pet/tàu. Tổng trọng lượng ≤ 9kg. <span class="red-bold">Ngồi cửa sổ hàng 32</span>.
         </div>
     </div>
 
@@ -181,20 +191,43 @@
     <div class="card highlight-card">
         <div class="card-header">🌐 HÀNH LÝ NỐI CHUYẾN (INTERLINE)</div>
         <div class="card-body">
-            <p><strong>Phương pháp thu phí:</strong> PC (Kiện) / KG (Trọng lượng)</p>
+            <p><strong>Tiêu chuẩn miễn cước (Max 23kg/kiện):</strong></p>
             <table>
-                <tr><th>Hãng (Code)</th><th>Quy định quá cước</th><th>Phí tham khảo</th></tr>
-                <tr><td><strong>United (UA)</strong></td><td>Kiện thứ 2 không bao gồm/ko miễn phí.</td><td><span class="price">$100 USD</span></td></tr>
-                <tr><td><strong>Air Canada (AC)</strong></td><td>Áp dụng quy định AC cho kiện vượt quá.</td><td><span class="price">$200 USD</span></td></tr>
-                <tr><td><strong>Aero Mexico (AM)</strong></td><td>Áp dụng quy định AM cho kiện vượt quá.</td><td><span class="price">$200 USD</span></td></tr>
-                <tr><td><strong>Uzbekistan (HY)</strong></td><td>Áp dụng quy định HY cho kiện vượt quá.</td><td><span class="price">$200 USD</span></td></tr>
-                <tr><td><strong>MIAT (OM)</strong></td><td>Áp dụng quy định OM cho kiện vượt quá.</td><td><span class="price">$200 USD</span></td></tr>
-                <tr><td><strong>SQ/PG/GA/QR/EY</strong></td><td>Theo quy định HL miễn phí của từng hãng.</td><td>Tùy hãng</td></tr>
+                <tr><th>Hãng</th><th>Định mức</th></tr>
+                <tr><td><strong>United (UA)</strong></td><td><span class="red-bold">2 kiện</span></td></tr>
+                <tr><td><strong>AC, AM, HY, OM</strong></td><td><span class="red-bold">1 kiện</span></td></tr>
             </table>
+
+            <p><strong>Quy tắc tính phí quá cước:</strong></p>
+            <ul>
+                <li><strong>$100/kiện:</strong> Nếu không có tiêu chuẩn miễn cước HOẶC kiện thứ 2 không nằm trong tiêu chuẩn.</li>
+                <li><strong>$200/kiện:</strong> Kiện thứ 3 trở đi (đối với hãng có tiêu chuẩn 2 kiện).</li>
+                <li><strong>$200/kiện:</strong> Phí <strong>Up cân</strong> cho mỗi kiện nặng quá 23kg.</li>
+            </ul>
 
             <div class="procedure">
                 <strong>Lưu ý Visa:</strong> Mark comment sau đây CHỈ KHI khách không có visa đến Hàn mà chỉ transit:
                 <div class="cmt-box">CMT: TRANSIT WITHOUT VISA INFO PAX OK</div>
+            </div>
+
+            <div class="interline-app">
+                <p style="margin-top:0; color:var(--orange); font-weight:bold">🧮 APP TÍNH PHÍ NHANH</p>
+                <div class="app-row">
+                    <label>Hãng nối chuyến:</label>
+                    <select id="airlineCode" onchange="updateBags()">
+                        <option value="2">UA (Tiêu chuẩn 2 kiện)</option>
+                        <option value="1">AC, AM, HY, OM (Tiêu chuẩn 1 kiện)</option>
+                        <option value="0">Khác (Tiêu chuẩn 0 kiện)</option>
+                    </select>
+                </div>
+                <div class="app-row">
+                    <label>Tổng số kiện khách gửi:</label>
+                    <input type="number" id="totalBags" min="0" value="0" onchange="updateBags()">
+                </div>
+                <div id="bagWeights" class="bag-list">
+                    </div>
+                <button class="btn-calc" onclick="calculateInterline()">TÍNH TIỀN</button>
+                <div id="calcResult"></div>
             </div>
         </div>
     </div>
@@ -229,9 +262,56 @@
             cards[i].style.display = text.includes(input) ? "" : "none";
         }
     }
+
+    function updateBags() {
+        const total = document.getElementById('totalBags').value;
+        const container = document.getElementById('bagWeights');
+        container.innerHTML = '';
+        for(let i=1; i<=total; i++) {
+            container.innerHTML += `
+                <div class="bag-item">
+                    <span>Kiện ${i}:</span>
+                    <input type="number" class="weight-input" placeholder="Nhập số kg" value="23">
+                </div>`;
+        }
+    }
+
+    function calculateInterline() {
+        const std = parseInt(document.getElementById('airlineCode').value);
+        const weights = document.getElementsByClassName('weight-input');
+        let totalFee = 0;
+        let detail = "";
+
+        for(let i=0; i < weights.length; i++) {
+            let w = parseFloat(weights[i].value);
+            let bagIndex = i + 1;
+            let bagFee = 0;
+
+            // Tính phí kiện
+            if (bagIndex > std) {
+                if (std === 0 || (std === 1 && bagIndex === 2)) {
+                    bagFee += 100;
+                } else {
+                    bagFee += 200;
+                }
+            }
+
+            // Tính phí up cân
+            if (w > 23) {
+                bagFee += 200;
+            }
+
+            if (bagFee > 0) {
+                detail += `Kiện ${bagIndex}: $${bagFee} | `;
+                totalFee += bagFee;
+            }
+        }
+
+        const res = document.getElementById('calcResult');
+        res.style.display = 'block';
+        res.innerHTML = `<strong>Chi tiết:</strong> ${detail || 'Miễn phí'} <br> <strong style="color:red; font-size:1.2rem">TỔNG THU: $${totalFee}</strong>`;
+    }
 </script>
 
 </body>
 </html>
-
-
