@@ -31,7 +31,7 @@
         .highlight-card { border-top: 5px solid var(--blue); }
         .procedure { background: #fffde7; border: 1px dashed #fbc02d; padding: 10px; margin-top: 10px; border-radius: 5px; font-size: 13.5px; }
         
-        /* App Styles mới bổ sung */
+        /* App Styles */
         .interline-app { background: #f8f9fa; border: 1px solid #ced4da; border-radius: 8px; padding: 15px; margin-top: 15px; border-left: 5px solid var(--orange); }
         .app-row { margin-bottom: 10px; }
         .app-row label { display: block; font-weight: bold; margin-bottom: 5px; font-size: 13px; }
@@ -84,7 +84,7 @@
                 <tr><td><strong>Extra Seat</strong></td><td>Tối đa 2 ghế thêm/pax</td><td><span class="price">$50</span></td></tr>
                 <tr><td><strong>Doorside Tag</strong></td><td>Dán thẻ ưu tiên HL</td><td><span class="price">$5</span></td></tr>
                 <tr><td><strong>HL Thể thao</strong></td><td>Trừ Golf (Giá đổi từ tiêu chuẩn)</td><td>Quầy: <span class="price">$20</span> / Online: <span class="price">$15</span></td></tr>
-                <tr><td><strong>PETC</strong></td><td>≤ 9kg (cả lồng),dimension < 100cm cao ≤ 23cm</td><td><span class="price">$100</span></td></tr>
+                <tr><td><strong>PETC</strong></td><td>≤ 9kg (cả lồng), dimension < 100cm, cao ≤ 23cm</td><td><span class="price">$100</span></td></tr>
                 <tr><td><strong>Quá cước HAN-ICN</strong></td><td>Mỗi kg phát sinh tại quầy</td><td><span class="price">$18</span> /kg</td></tr>
                 <tr><td><strong>Hạng vé FLY</strong></td><td>Kiện 15kg đầu tiên tại quầy</td><td><span class="price">$90</span></td></tr>
             </table>
@@ -124,7 +124,7 @@
             <hr>
             <p><strong>• Pax WCH:</strong> Thêm SSR <span class="tag">WCHR</span> / <span class="tag">WCHS</span> / <span class="tag">WCHC</span>.
                 <br>- Thêm SSR <span class="tag">MAAS</span> nếu cần hỗ trợ tại ICN.
-                <br>- Nếu đi code nhiều người: Bổ sung số ghế của pax vào CMT.
+                <br>- Khách có PNR từ 2 người trở lên: <span class="red-bold">Khi Mark CMT PHẢI KÈM THEO SỐ GHẾ</span>.
                 <div class="cmt-box">MARK CMT: PAX NEED (NO NEED) WCH AND NEED (NO NEED) MAAS AT ICN AIRPORT</div>
             </p>
             <hr>
@@ -152,7 +152,13 @@
             <p><strong>• No Recline:</strong> 14, 15, 32. | <strong>Exit (15,16):</strong> ≥ 15t, hiểu Anh/Hàn.</p>
             <div class="cmt-box">HÀNG 15: EXIT AND NO RECLINE SEAT INFOM PAX OK</div>
             <div class="cmt-box">HÀNG 16: EXIT SEAT INFORM PAX OK</div>
-            <div class="cmt-box">HÀNG 14/32: NO RECLINE SEAT INFORM PAX OK</div>
+            
+            <div class="sys-box" style="border-left-color: #d63031;">
+                <strong>⚠️ QUY ĐỊNH GHẾ EXIT:</strong><br>
+                Khách ngồi ghế thoát hiểm <strong>CẦN ADD THÊM SSR EXIT</strong> và điền nội dung:<br>
+                <code>EXIT X CONDITION CHECK OK X DOB...</code>
+            </div>
+            
             <hr>
             <strong>• Nhạc cụ lớn:</strong> Max 292cm, ký miễn trừ.
             <br>- 115cm - 195cm (< 75kg): Phải mua thêm ghế (CBBG).
@@ -164,6 +170,17 @@
     <div class="card highlight-card">
         <div class="card-header">💻 HƯỚNG DẪN HỆ THỐNG</div>
         <div class="card-body">
+            <p><strong>• KIỂM TRA LOẠI KHÁCH (BẮT BUỘC):</strong></p>
+            <div class="sys-box">
+                <span class="red-bold">LUÔN KIỂM TRA TYPE VÉ</span> của khách trước khi check-in (Bấm <strong>Ctrl + I</strong> hoặc <strong>Ctrl + H</strong>) để tránh tình trạng check-in nhầm lẫn giữa khách ADL và CHD.
+            </div>
+
+            <p><strong>• QUY TẮC MARK COMMENT:</strong></p>
+            <div class="sys-box">
+                - <strong>Đối với PNR đoàn (≥ 2 khách):</strong> Bắt buộc phải <strong>KÈM THEO SỐ GHẾ</strong> khi mark comment.<br>
+                - <strong>Phân loại Comment:</strong> Các thông tin KHÔNG LIÊN QUAN đến Manifest (như vé chiều về, giấy tờ tùy thân, visa...) yêu cầu chọn mục <strong>RESERVATION</strong> để mark CMT. Tuyệt đối <strong>KHÔNG</strong> mark vào Manifest tránh làm loạn thông tin của Crew.
+            </div>
+
             <p><strong>• Hành lý 40kg:</strong></p>
             <div class="sys-box">
                 - <strong>Ctrl H</strong>: Kiểm tra tiêu chuẩn 40kg.<br>
@@ -191,6 +208,12 @@
     <div class="card highlight-card">
         <div class="card-header">🌐 HÀNH LÝ NỐI CHUYẾN (INTERLINE)</div>
         <div class="card-body">
+            
+            <div class="sys-box">
+                <strong>Cách kiểm tra tiêu chuẩn HLKG nối chuyến trên vé của khách:</strong><br>
+                Gonow ➔ Payment ➔ Ticket ➔ Ticket Detail ➔ More Details ➔ Baggage Allowance
+            </div>
+
             <p><strong>Tiêu chuẩn miễn cước (Max 23kg/kiện):</strong></p>
             <table>
                 <tr><th>Hãng</th><th>Định mức</th></tr>
@@ -242,6 +265,10 @@
                     <li>Ghi mặt sau tờ bán ghế: <strong>PNR, Tên khách, Loại dịch vụ (Số ghế/Số kg)</strong>.</li>
                     <li>Hướng dẫn khách ra REP trả tiền rồi quay lại lấy BP.</li>
                 </ol>
+            </div>
+            <div class="procedure">
+                <strong>In lại vé (Reprint BP):</strong><br>
+                Khách yêu cầu in lại vé bắt buộc <strong>PHẢI HỦY CHECK-IN và CHECK-IN LẠI</strong> để hệ thống nhảy số thứ tự (SQ) mới.
             </div>
             <p><strong>• Hư hại HL:</strong> Dán thẻ "DAMAGE", khách ký thẻ HL, SSR <strong>DMG</strong> + Note vị trí hư hại.</p>
         </div>
@@ -315,4 +342,3 @@
 
 </body>
 </html>
-
